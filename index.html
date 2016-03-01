@@ -137,7 +137,7 @@ T.d=function(v){return new V(T.x/v,T.y/v)};//divide
 T.n=function(){l=T.l();if(l==0){T.x=1;return T}T.x/=l;T.y/=l;return T};//normalize
 T.t=function(v){T.g(M.min(v,T.l()));return T};//truncate
 };
-q=[];for(i=0;i<42;i++){q[i]={p:new V(R()*w,R()*h),v:new V(0,0),s:new V(0,0),a:0,d:6,r:2,g:0.5,m:2,f:1,e:3}};
+q=[];for(i=0;i<42;i++){q[i]={p:new V(R()*w,R()*h),v:new V(0,0),s:new V(0,0),a:0,d:3,r:2,g:0.5,m:4,f:0.5,e:3}};
 //p=position,v=velocity,s=steeringforce,a=wanderangle,d=wanderdistance,r=wanderradius,g=wanderrange,m=mass,f=maxforce,e=maxspeed
 function f(){
 c.fillStyle='#bfbfbf';c.fillRect(0,0,w,h);c.fillStyle='#707070';
