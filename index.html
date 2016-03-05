@@ -123,40 +123,7 @@
     <script type="demo">
       // THIS IS WHERE YOUR DEMO GOES
 
-w=a.width,h=a.height;M=Math,R=M.random;
-V=function(x,y){var T=this;T.x=x;T.y=y;
-T.l=function(){return M.sqrt(T.x*T.x+T.y*T.y)};
-T.e=function(){return M.atan2(T.y, T.x)};
-T.g=function(v){z=T.e();T.x=M.cos(z)*v;T.y=M.sin(z)*v};
-T.s=function(v){z=T.l();T.x=M.cos(v)*z;T.y=M.sin(v)*z};
-T.a=function(v){return new V(T.x+v.x,T.y+v.y)};
-T.m=function(v){return new V(T.x*v,T.y*v)};
-T.d=function(v){return new V(T.x/v,T.y/v)};
-T.n=function(){l=T.l();if(l==0){T.x=1;return T}T.x/=l;T.y/=l;return T};
-T.t=function(v){T.g(M.min(v,T.l()));return T};};
-q=[];for(i=0;i<42;i++){q[i]={p:new V(R()*w,R()*h),v:new V(0,0),s:new V(0,0),a:0}};
-function f(){
-c.fillStyle='#bfbfbf';c.fillRect(0,0,w,h);c.fillStyle='#707070';
-for(i in q){o=q[i];
-t=new V(o.v.x,o.v.y);t=t.n().m(3);
-s=new V(0,0);
-s.g(2);
-s.s(o.a);
-o.a+=R()-1;
-t=t.a(s);
-o.s=o.s.a(t);
-o.s.t(.5);
-o.s=o.s.d(4);
-o.v=o.v.a(o.s);
-o.s=new V(0,0);
-o.v.t(3);
-o.p=o.p.a(o.v);
-x=o.p.x;y=o.p.y;
-x=(x>w)?0:(x<0)?w:x;
-y=(y>h)?0:(y<0)?h:y;
-c.fillRect(x,y,3,3);
-o.p.x=x;o.p.y=y;
-}requestAnimationFrame(f);}f();
+w=a.width,h=a.height;M=Math,R=M.random;V=function(x,y){var T=this;T.x=x;T.y=y;T.l=function(){return M.sqrt(T.x*T.x+T.y*T.y)};T.e=function(){return M.atan2(T.y, T.x)};T.g=function(v){z=T.e();T.x=M.cos(z)*v;T.y=M.sin(z)*v};T.s=function(v){z=T.l();T.x=M.cos(v)*z;T.y=M.sin(v)*z};T.a=function(v){return new V(T.x+v.x,T.y+v.y)};T.m=function(v){return new V(T.x*v,T.y*v)};T.d=function(v){return new V(T.x/v,T.y/v)};T.n=function(){l=T.l();if(l==0){T.x=1;return T}T.x/=l;T.y/=l;return T};T.t=function(v){T.g(M.min(v,T.l()));return T};};q=[];for(i=0;i<42;i++){q[i]={p:new V(R()*w,R()*h),v:new V(0,0),s:new V(0,0),a:0}};function f(){c.fillStyle='#bfbfbf';c.fillRect(0,0,w,h);c.fillStyle='#707070';for(i in q){o=q[i];t=new V(o.v.x,o.v.y);t=t.n().m(3);s=new V(0,0);s.g(2);s.s(o.a);o.a+=R()-1;t=t.a(s);o.s=o.s.a(t);o.s.t(2);o.s=o.s.d(6);o.v=o.v.a(o.s);o.s=new V(0,0);o.v.t(2);o.p=o.p.a(o.v);x=o.p.x;y=o.p.y;x=(x>w)?0:(x<0)?w:x;y=(y>h)?0:(y<0)?h:y;c.fillRect(x,y,3,3);o.p.x=x;o.p.y=y;}requestAnimationFrame(f);}f();
 
       // END
     </script>
